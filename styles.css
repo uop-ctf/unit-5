@@ -106,12 +106,12 @@ body {
     }
     .container {
         display: grid;
-        background: url("./images/bg-pattern-desktop.svg") no-repeat;
+        background: url("./images/bg-pattern-desktop.svg") left / 60% no-repeat;
         grid-template-areas:
             "header hero"
             "main hero"
             "footer hero";
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 60% 40%;
         grid-template-rows: auto 1fr auto;
     }
     .header {
