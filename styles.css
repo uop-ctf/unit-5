@@ -1,0 +1,152 @@
+@import "reset.css";
+body {
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+:root {
+    --accent: #c6acae;
+}
+.container {
+}
+.header {
+    padding: 30px 20px;
+}
+.hero > img {
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    max-height: 400px;
+}
+.desktop {
+    display: none;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 35px;
+}
+.coming-soon {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+}
+.greetings {
+    margin-top: 20px;
+}
+.coming-soon--we {
+    color: var(--accent);
+    font-weight: 200;
+}
+.greetings {
+    color: var(--accent);
+}
+.form {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 0 30px;
+}
+.email-input {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    overflow: hidden;
+}
+.email-input > input {
+    padding: 15px 20px 13px;
+    border: none;
+    width: 100%;
+    color: var(--accent);
+    outline: none;
+}
+.email-input > input::placeholder {
+    color: var(--accent);
+    opacity: 0.7;
+}
+.email-input > input:placeholder-shown {
+    text-overflow: ellipsis;
+}
+.email-input > button {
+    background: rgb(244,175,174);
+    background: linear-gradient(90deg, rgba(244,175,174,1) 0%, rgba(239,136,136,1) 100%);
+    width: 100px;
+    font-size: 42px;
+    font-weight: 100;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+.email-input > button > span {
+    display: block;
+    transform: scaleX(0.8);
+}
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--accent);
+    padding: 40px;
+}
+@media screen and (min-width: 768px) {
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+    .container {
+        display: grid;
+        background: url("./images/bg-pattern-desktop.svg") no-repeat;
+        grid-template-areas:
+            "header hero"
+            "main hero"
+            "footer hero";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+    .header {
+        grid-area: header;
+    }
+    .main {
+        grid-area: main;
+        text-align: left;
+        justify-content: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .footer {
+        grid-area: footer;
+    }
+    .hero {
+        grid-area: hero;
+    }
+    .hero > img {
+        max-height: unset;
+        height: 100vh;
+    }
+    .coming-soon {
+        width: 100%;
+        font-size: 60px;
+    }
+    .greetings {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    .form {
+        width: 100%;
+        padding: 0;
+    }
+    .email-input > button {
+        width: 150px;
+    }
+}
